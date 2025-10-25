@@ -65,5 +65,24 @@ body[data-theme="dark"] {
   background-color: #0f172a !important;
   color: #f9fafb !important;
 }
+.meta-row {
+  margin-bottom: 4px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+/* светла тема */
+body[data-theme="light"] .chip-openai { background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe; }
+body[data-theme="light"] .chip-wiki   { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+
+/* темна тема */
+body[data-theme="dark"] .chip-openai { background: #1f2937; color: #93c5fd; border-color: #374151; }
+body[data-theme="dark"] .chip-wiki   { background: #0f3d32; color: #6ee7b7; border-color: #14532d; }
 
 
