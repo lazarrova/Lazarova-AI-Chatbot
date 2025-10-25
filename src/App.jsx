@@ -15,6 +15,18 @@ function App() {
     { message: "Hello, I'm LazarovaBot! Ask me anything.", sender: "assistant", direction: "incoming" }
   ])
 
+  // Dark / Light theme
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   const abortRef = useRef(null)
 
   useEffect(() => {
@@ -133,6 +145,21 @@ function App() {
           justifyContent: "flex-end",
           alignItems: "center"
         }}>
+          <button
+              onClick={toggleTheme}
+              style={{
+                padding: "6px 12px",
+                backgroundColor: theme === "dark" ? "#facc15" : "#1e293b",
+                color: theme === "dark" ? "#000" : "#fff",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "14px"
+              }}
+          >
+            {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </button>
+
           <button
               onClick={stopGenerating}
               disabled={!typing}

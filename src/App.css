@@ -41,3 +41,29 @@
   color: orange;
 }
 
+/* 🌙 Dark / Light theme variables */
+body[data-theme="light"] {
+  background-color: #f9fafb;
+  color: #111827;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+  background-color: #111827;
+  color: #f9fafb;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: customize chat container look */
+[data-theme="dark"] .cs-message-list,
+[data-theme="dark"] .cs-chat-container {
+  background-color: #1e293b !important;
+  color: #f9fafb !important;
+}
+
+[data-theme="dark"] .cs-message-input {
+  background-color: #0f172a !important;
+  color: #f9fafb !important;
+}
+
+
